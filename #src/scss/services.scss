@@ -1,0 +1,135 @@
+.services {
+  @include adaptiv-value("padding-top", 80, 30, 1);
+  @include adaptiv-value("padding-bottom", 50, 30, 1);
+  &__title {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  &__text {
+    margin: 0 auto 50px;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  &__item {
+    display: flex;
+    flex: 0 1 30%;
+    flex-direction: column;
+    margin: 0px 15px 30px 15px;
+    text-align: center;
+  }
+  &__img-box {
+    margin-bottom: 18px;
+    max-width: 384px;
+    max-height: 155.23px;
+    transition: all 0.5s ease 0s;
+  }
+  &__img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+  &__btn {
+    margin: 0 auto;
+    border: 1px solid $orange;
+    line-height: 19px;
+    color: $orange;
+    background-color: $white;
+    transition: all 0.7s;
+    transition: all 0.5s ease 0s;
+    &:hover {
+      border: 1px solid #174f78;
+      color: #174f78;
+    }
+  }
+  &__subtitle {
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.01em;
+    color: $halti;
+    @extend %r-b;
+  }
+  &__descr {
+    flex: 1 1 auto;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(#696775, 0.7);
+  }
+  &-vip {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      width: 55px;
+      height: 29px;
+      background-image: url(../img/icons/vip.svg);
+    }
+  }
+}
+
+//============@media================
+@media (min-width: 769px) {
+  .services {
+    &__item {
+      position: relative;
+      &:hover .services__btn {
+        opacity: 1;
+        visibility: visible;
+      }
+      &:hover .services__img-box {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: rgba(#111, 0.5);
+          transition: all 0.5s ease 0s;
+        }
+      }
+    }
+    &__btn {
+      position: absolute;
+      left: 50%;
+      top: 50px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%);
+      transition: opacity 0.7s;
+    }
+  }
+}
+@media (max-width: 950px) {
+  .services {
+    &__item {
+      flex: 0 1 45%;
+    }
+  }
+}
+@media (max-width: 769px) {
+}
+@media (max-width: 630px) {
+  .services {
+    &__item {
+      flex: 0 1 100%;
+    }
+    &__img-box {
+      max-width: 100%;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .services__text {
+    margin: 0 auto 30px;
+  }
+}
+//============@media================

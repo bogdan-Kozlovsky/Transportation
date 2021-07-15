@@ -1,0 +1,138 @@
+.tariffs {
+  @include adaptiv-value("padding-top", 50, 30, 1);
+  @include adaptiv-value("padding-bottom", 50, 30, 1);
+  &__title {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0 auto 50px;
+    width: 100%;
+    max-width: 780px;
+    text-align: center;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -30px;
+  }
+
+  &__item {
+    position: relative;
+    flex: 0 1 30%;
+    margin: 0 12px 30px 12px;
+    border-radius: 4px;
+    min-height: 558px;
+    background: #f8f6fa;
+    @include adaptiv-value("padding", 35, 15, 1);
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &__img-box {
+    margin-bottom: 58px;
+    max-width: 304px;
+    max-height: 184px;
+  }
+
+  &__img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    margin-bottom: 25px;
+  }
+
+  &__box {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  &__descr {
+    margin-bottom: 20px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+  }
+  &__num {
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    color: $halti;
+  }
+  &__num-bold {
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 0.01em;
+    color: $accent;
+    @extend %r-black;
+  }
+  &__btn {
+    position: relative;
+    border: 1px solid #fff;
+    transition: all 0.5s ease 0s;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 22px;
+      width: 10px;
+      height: 1px;
+      background-color: $orange;
+      transition: all 0.5s ease 0s;
+      cursor: pointer;
+    }
+    &::before {
+      right: 13px;
+      transform: rotate(40deg);
+    }
+    &::after {
+      right: 21px;
+      transform: rotate(-40deg);
+    }
+    &._active {
+      &::before {
+        transform: rotate(-40deg);
+      }
+      &::after {
+        transform: rotate(40deg);
+      }
+    }
+    &:hover {
+      border: 1px solid #174f78;
+      color: #174f78;
+      &::before,
+      &::after {
+        background-color: #174f78;
+      }
+    }
+  }
+  &__spoler {
+    position: absolute;
+    left: 50%;
+    bottom: 96px;
+    overflow: auto;
+    padding: 10px 10px;
+    width: 94%;
+    height: 160px;
+    background-color: #fff;
+    transform: translateX(-50%);
+  }
+}
+
+// ======@media=====
+@media (max-width: 1300px) {
+  .tariffs__item {
+    flex: 1 1 30%;
+  }
+}
+@media (max-width: 400px) {
+  .btn-details {
+    margin: 0 auto;
+    padding: 15px 80px;
+  }
+}

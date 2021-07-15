@@ -1,0 +1,118 @@
+.footer {
+  @include adaptiv-value("padding-top", 81, 40, 1);
+  background: #e9eaf1;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #dfdced;
+    padding-bottom: 56px;
+  }
+  &__descr {
+    flex: 0 0 400px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  &__logo {
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+
+  &__copy {
+    padding: 24px 0;
+    text-align: center;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+  }
+  &__box-time {
+    display: flex;
+    flex-direction: column;
+  }
+  &__box-descr {
+    font-size: 15px;
+    line-height: 18px;
+    color: $halti;
+  }
+
+  &__box-time {
+    margin-bottom: 63px;
+  }
+
+  &__box-subtitle {
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #adabb9;
+    @extend %l-r;
+  }
+  &__services-subtitle {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  &__phone-link {
+    display: block;
+    margin-bottom: 18px;
+    color: $orange;
+  }
+  &__social-items {
+    display: flex;
+    justify-content: space-between;
+    max-width: 170px;
+  }
+
+  &__social-link {
+    width: 30px;
+    height: 30px;
+
+    img {
+      border-radius: 5px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+// ===========media============
+@media (max-width: 940px) {
+  .footer__inner {
+    display: block;
+  }
+  .footer__logo {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  .footer__descr-text {
+    margin-bottom: 20px;
+  }
+  .footer__menu {
+    margin-bottom: 20px;
+  }
+  .footer__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .footer__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  .footer__box-time {
+    margin-bottom: 25px;
+  }
+  .footer__inner {
+    padding-bottom: 25px;
+  }
+}
+// ===========media============
